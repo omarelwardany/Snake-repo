@@ -53,3 +53,4 @@ void setup();
 void render();
 void display();
 void input();
+void textColor(int color);
