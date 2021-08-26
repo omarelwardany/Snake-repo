@@ -5,13 +5,13 @@ int main()
     setup();
     while (!gameover)
     {
-        SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), {0, 0});
-        render();
-        display();
+        SetConsoleCursorPosition(StdHandle, {0, 0}); //return console cursor to origin
+        render(); //build up the buffer
+        display(); //display the buffer
         print("Your score is: " << snake.length);
         //Sleep(20);
-        input();
-        snake.move();
+        input(); //get key pressed
+        snake.move(); //move the snake by 1 unit of distance
     }
     emptyline();
     emptyline();
@@ -24,7 +24,7 @@ int main()
 
 void textColor(int color)
 {
-    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), color);
+    SetConsoleTextAttribute(StdHandle, color);
 }
 
 void setup()
