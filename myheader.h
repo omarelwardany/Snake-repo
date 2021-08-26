@@ -54,3 +54,5 @@ void render();
 void display();
 void input();
 void textColor(int color);
+
+HANDLE StdHandle = GetStdHandle(STD_OUTPUT_HANDLE);
