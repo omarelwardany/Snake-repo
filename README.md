@@ -1,2 +1,2 @@
 # The Snake
-This is a basic snake game
+This is the ancient snake game, made into the windows console
