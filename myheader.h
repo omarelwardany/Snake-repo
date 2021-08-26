@@ -2,7 +2,6 @@
 #include <cstdlib>
 #include <windows.h>
 #include <conio.h>
-#include <ctime>
 using namespace std;
 #define DIM 35
 #define print(x) cout << x
