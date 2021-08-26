@@ -15,9 +15,16 @@ int main()
     }
     emptyline();
     emptyline();
+    system("color 0C");
     println("Game Over!");
     println("Press Enter to exit");
     cin.get();
+    system("color 07");
+}
+
+void textColor(int color)
+{
+    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), color);
 }
 
 void setup()
@@ -30,6 +37,7 @@ void setup()
     {
         newfruit;
     } while (fruit.pos.x < 4 or fruit.pos.y < 4);
+    system("color 0F");
     
     gameover = false;
     for (int i = 0; i < DIM; i++)
@@ -64,6 +72,7 @@ void render()
                     {
                         snake.length++;
                         buffer[i][j] = '+';
+                        points[i][j] = snake.length;
                         do
                         {
                             newfruit;
@@ -98,8 +107,13 @@ void display()
     {
         for (int i = 0; i < DIM; i++)
         {
+            if (buffer[i][j] == '+')
+                textColor(10);
+            else if (buffer[i][j] == '@')
+                textColor(12);
             print(buffer[i][j]);
             print(' ');
+            textColor(15);
         }
         emptyline();
     }
