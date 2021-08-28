@@ -20,7 +20,7 @@ using namespace std;
 bool gameover;
 char buffer[DIM][DIM];
 int points[DIM][DIM];
-int gamemode = 0;
+int difficulty = 0;
 
 HANDLE StdHandle = GetStdHandle(STD_OUTPUT_HANDLE);
 void setCursor(int size, bool visible)
@@ -70,7 +70,7 @@ void render()
                 buffer[i][j] = '#';
                 if (snakehere)
                 {
-                    if (gamemode == HARD)
+                    if (difficulty == HARD)
                     {
                         gameover = true;
                     }
