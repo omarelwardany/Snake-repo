@@ -2,30 +2,32 @@
 
 int main()
 {
-    println("Please choose your game mode, (E)asy or (H)ard?");
+    println("Please choose a difficulty, (E)asy or (H)ard?");
+    newline;
+    println("(E)asy: You only die from biting yourself, \n        but you can teleport through walls");
+    newline;
+    println("(H)ard: You can also die when you hit a wall");
     do
     {
         int key = _getch();
         if (key == 'e')
         {
-            gamemode = EASY;
+            difficulty = EASY;
         }
         else if (key == 'h')
         {
-            gamemode = HARD;
+            difficulty = HARD;
         }
-        
-    } while (gamemode != EASY and gamemode != HARD);
+    } while (difficulty != EASY and difficulty != HARD);
     
     bool firstloop;
     start:
     setup();
-    setCursor(0, false);
     firstloop = true;
     while (not gameover)
     {
-        setCursor(0, false);
         SetConsoleCursorPosition(StdHandle, {0, 0}); //return console cursor to origin
+        setCursor(0, false);
         render(); //build up the buffer
         display(); //display the buffer
         print("Your score is: " << snake.length);
@@ -45,8 +47,10 @@ int main()
     newline;
     system("color 0C");
     println("Game Over!");
-    println("(R)etry or (C)ontinue or (E)xit");
-    Sleep(1000);
+    newline;
+    println("(R)etry: Will restart the game from zero length");
+    println("(C)ontinue: Will restart the game at the current length");
+    println("(Q)uit: Will close the game");
     end:
     switch(_getch())
     {
@@ -54,7 +58,7 @@ int main()
             snake.length = 0;
         case 'c':
             goto start;
-        case 'e':
+        case 'q':
             return 0;
         default:
             goto end;
