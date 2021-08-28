@@ -34,8 +34,8 @@ int main()
             for (int i = 0; i < 5; i++)
             {
                 println("                                                             ");
-                firstloop = false;
             }
+                firstloop = false;
         }
         Sleep(30);
         input(); //get key pressed
