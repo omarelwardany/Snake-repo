@@ -66,4 +66,3 @@ int main()
     setCursor(10, true);
     system("color 07");
 }
-
