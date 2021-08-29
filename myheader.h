@@ -19,7 +19,7 @@ using namespace std;
 
 bool gameover;
 char buffer[DIM][DIM];
-int points[DIM][DIM];
+unsigned short int points[DIM][DIM];
 int difficulty = 0;
 
 HANDLE StdHandle = GetStdHandle(STD_OUTPUT_HANDLE);
