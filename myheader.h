@@ -58,7 +58,7 @@ void setup()
     }
     srand((unsigned) 20);
 }
-
+// rendering and logic
 void render()
 {
     for (int j = 0; j < DIM; j++)
